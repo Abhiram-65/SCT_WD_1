@@ -20,12 +20,12 @@
     }
 
     header.scrolled {
-      background-color: #f1f1f1;
+      background-color: #d4cbcb;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .header-img {
-      width: 10vw;
+      width: 3vw;
       margin: 0;
       padding: 0.5em;
     }
@@ -40,20 +40,20 @@
       position: fixed;
       top: 60px;
       left: 0;
-      overflow-y: auto;
+      overflow: auto;
     }
 
     li a {
       display: block;
       color: black;
       padding: 16px 32px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration:none;
     }
 
     li a:hover {
       background-color: #005f8f;
       color: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .iframe-container {
@@ -67,13 +67,21 @@
       height: 100%;
       border: none;
     }
+    div{
+      display:flex;
+    }
+    .web-name{
+      color:mediumseagreen;
+    }
   </style>
 </head>
 <body>
 
   <!-- Header with logo -->
   <header id="mainHeader">
-    <img src="https://abhi.co/storage/2025/03/Logo.svg" class="header-img">
+    <div><img src="https://abhi.co/storage/2025/03/Logo.svg" class="header-img">
+      <span class="web-name"><h2>Shopora</h2></span>
+    </div>
   </header>
 
   <!-- Sidebar Navigation -->
@@ -90,5 +98,18 @@
     <iframe name="contentFrame" src="home.html"></iframe>
   </div>  
 
+  <script>
+  window.addEventListener('scroll', function () {
+    const header = document.getElementById('mainHeader');
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+  </script>
+
+
 </body>
 </html>
+
